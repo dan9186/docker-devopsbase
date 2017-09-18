@@ -69,7 +69,4 @@ RUN pip install awscli
 # Install NPM Items
 RUN npm install -g bower ember-cli grunt-cli less
 
-# Add custom binaries
-ADD ext/cqlsh /usr/bin/cqlsh
-
 WORKDIR /
