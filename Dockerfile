@@ -47,13 +47,14 @@ WORKDIR /tmp
 RUN pip install --upgrade pip
 
 # Install RVM
+ENV RVM_VERSION 1.29.3
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3 && \
-    wget https://github.com/rvm/rvm/archive/1.27.0.tar.gz && \
-    tar xvf 1.27.0.tar.gz && \
-    cd rvm-1.27.0 && \
+    wget "https://github.com/rvm/rvm/archive/$RVM_VERSION.tar.gz" && \
+    tar xvf "$RVM_VERSION.tar.gz" && \
+    cd "rvm-$RVM_VERSION" && \
     ./install && \
     cd /tmp && \
-    rm -rf 1.27.0.tar.gz rvm-1.27.0 && \
+    rm -rf "$RVM_VERSION.tar.gz" "rvm-$RVM_VERSION" && \
     echo "bundler" >> /usr/local/rvm/gemsets/global.gems
 
 # Install Packer
@@ -67,8 +68,5 @@ RUN pip install awscli
 
 # Install NPM Items
 RUN npm install -g bower ember-cli grunt-cli less
-
-# Add custom binaries
-ADD ext/cqlsh /usr/bin/cqlsh
 
 WORKDIR /
