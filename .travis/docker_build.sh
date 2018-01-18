@@ -5,6 +5,7 @@ source .env
 
 BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
+IMAGE_NAME="dan9186/devopsbase"
 IMAGE_VERSION="0.0.1"
 
 echo "Testing Dockerfile"
