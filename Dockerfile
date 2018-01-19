@@ -2,16 +2,15 @@ FROM gomicro/golang:centos7
 
 MAINTAINER Daniel Hess <dan9186@gmail.com>
 
-ARG BUILD_DATE
-ARG BUILD_NUMBER
+ARG GIT_COMMIT_HASH
 ARG VERSION
 
-LABEL org.metadata.build-date=$BUILD_DATE \
-	   org.metadata.version=$VERSION.$BUILD_NUMBER \
-	   org.metadata.name="" \
-	   org.metadata.description="" \
+LABEL org.metadata.version=$VERSION \
+	   org.metadata.name="Devops Base Image" \
+	   org.metadata.description="A base image for personalized docker environments with several devopsy tools installed." \
 	   org.metadata.url="https://github.com/dan9186/docker-devopsbase" \
-	   org.metadata.vcs-url="https://github.com/dan9186/docker-devopsbase"
+	   org.metadata.vcs-url="https://github.com/dan9186/docker-devopsbase" \
+	   org.metadata.vcs-sha=$GIT_COMMIT_HASH
 
 # Add repos
 RUN rpm -Uvh https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm

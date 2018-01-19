@@ -2,6 +2,7 @@ SHELL = bash
 
 APP := $(shell basename $(PWD) | tr '[:upper:]' '[:lower:]')
 VERSION := $(shell git describe --tags 2>/dev/null || echo v0.0.1)
+TRAVIS_BUILD_NUMBER ?= 1
 BUILD_NUMBER ?= $(TRAVIS_BUILD_NUMBER)
 BUILD_VERSION := $(VERSION)-$(BUILD_NUMBER)
 GIT_COMMIT_HASH ?= $(TRAVIS_COMMIT)
