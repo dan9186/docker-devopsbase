@@ -11,7 +11,7 @@ LABEL org.metadata.version=$VERSION \
 	   org.metadata.vcs-sha=$GIT_COMMIT_HASH
 
 # Add repos
-RUN rpm -Uvh https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm
+RUN rpm -Uvh https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 # Install Packages
 RUN yum -y install epel-release && \
@@ -27,7 +27,7 @@ RUN yum -y install epel-release && \
 					gcc-c++ git \
 					make man maven mercurial \
 					nmap nmap-ncat nodejs npm net-tools \
-					patch postgresql95-devel postgresql-devel python-devel python-pip \
+					patch postgresql96-devel postgresql-devel python-devel python-pip \
 					readline-devel \
 					sqlite-devel \
 					tar \
