@@ -1,6 +1,4 @@
-FROM gomicro/golang:centos7
-
-MAINTAINER Daniel Hess <dan9186@gmail.com>
+FROM centos:7
 
 ARG GIT_COMMIT_HASH
 ARG VERSION
@@ -41,6 +39,13 @@ RUN yum -y install epel-release && \
     yum clean all
 
 WORKDIR /tmp
+
+# Install Golang
+COPY --from=golang:stretch /usr/local/go /usr/local/go
+ENV GOROOT /usr/local/go
+ENV GOPATH /go
+ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin
+RUN mkdir /go
 
 # Upgrade Pip
 RUN pip install --upgrade pip
