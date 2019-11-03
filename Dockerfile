@@ -51,7 +51,7 @@ RUN mkdir /go
 RUN pip install --upgrade pip
 
 # Install RVM
-ENV RVM_VERSION 1.29.3
+ENV RVM_VERSION 1.29.9
 RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3 && \
     wget "https://github.com/rvm/rvm/archive/$RVM_VERSION.tar.gz" && \
     tar xvf "$RVM_VERSION.tar.gz" && \
