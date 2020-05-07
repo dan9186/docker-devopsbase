@@ -1,9 +1,0 @@
-services:
-  - docker
-
-before_script:
-  - make ci_setup
-
-script:
-  - make dockerize
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then make deploy; fi
