@@ -22,15 +22,16 @@ RUN yum -y install epel-release && \
 					bind-utils bison bzip2 bzr \
 					cmake curl \
 					file-devel \
+					gcc-c++ git \
 					jq \
 					libcurl-devel libffi-devel libicu-devel libpqxx-devel libtool libxml2-devel libxslt-devel libyaml-devel libtool-ltdl-devel \
-					gcc-c++ git \
 					make man maven mercurial \
 					nmap nmap-ncat nodejs npm net-tools \
 					patch postgresql96-devel postgresql-devel python-devel python-pip \
 					readline-devel \
 					sqlite-devel \
 					tar \
+					tmux \
 					unzip \
 					vim \
 					wget \
